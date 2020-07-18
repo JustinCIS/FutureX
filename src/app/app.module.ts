@@ -3,18 +3,42 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FxMovieGridComponent } from './components/fx-movie-grid/fx-movie-grid.component';
-import { FxMovieSearchComponent } from './components/fx-movie-search/fx-movie-search.component';
+import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
+import { MovieSearchComponent } from './components/movie-search/movie-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FxMovieGridComponent,
-    FxMovieSearchComponent
+    MovieGridComponent,
+    MovieSearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatToolbarModule
+  ],
+  exports: [
+    MatFormFieldModule,
+    MatInputModule, 
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FxMovieGridService } from './fx-movie-grid.service';
+import { MovieGridService } from './movie-grid.service';
 
-describe('FxMovieGridService', () => {
-  let service: FxMovieGridService;
+describe('MovieGridService', () => {
+  let service: MovieGridService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FxMovieGridService);
+    service = TestBed.inject(MovieGridService);
   });
 
   it('should be created', () => {
