@@ -14,22 +14,12 @@ export interface Movie {
   Director: string; 
   Actors: string[];
   Year: number;
-  Runtime: number;
+  "Runtime (Minutes)": number;
   Rating: number;
   Votes: number;
-  Revenue: number;
+  "Revenue (Millions)": number;
   Metascore: number;
 }
-
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
-
 
 @Component({
   selector: 'fx-movie-grid',
@@ -47,8 +37,6 @@ export class MovieGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
@@ -71,6 +59,8 @@ export class MovieGridComponent implements OnInit {
       const cols = Object.keys(csv[0]);
       this.displayedColumns = cols;
       this.dataSource = new MatTableDataSource(csv);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
 }

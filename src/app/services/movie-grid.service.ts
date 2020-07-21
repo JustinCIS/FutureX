@@ -15,20 +15,29 @@ export class MovieGridService {
   }
 
   csvJSON(csv) {
-    const lines = csv.split('\n')
-    const result = []
-    const headers = lines[0].split(',')
+    const lines = csv.split('\n');
+    const result = [];
+    const headers = lines[0].split(',');
 
     for (let i = 1; i < lines.length; i++) {        
         if (!lines[i])
-            continue
-        const obj = {}
-        const currentline = lines[i].split(',')
+            continue;
+        const obj = {};
+        const currentline = lines[i];
 
         for (let j = 0; j < headers.length; j++) {
-            obj[headers[j]] = currentline[j]
+          let buildArray = currentline.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+          buildArray = buildArray || "";
+
+          if(!Array.isArray(buildArray))
+            break;
+
+          for(let k = 0; k < buildArray.length; k++){
+            obj[headers[k]] = buildArray[k].replace(/"/g, '');
+          }
+          result.push(obj)
+          break;
         }
-        result.push(obj)
     }
     return result
 }
