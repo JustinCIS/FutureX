@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -30,7 +31,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   exports: [
     MatFormFieldModule,
