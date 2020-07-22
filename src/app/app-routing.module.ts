@@ -5,7 +5,7 @@ import { MovieGridComponent } from './components/movie-grid/movie-grid.component
 
 const routes: Routes = [
   { path: 'fx-movies', component: MovieGridComponent },
-  { path: '',   redirectTo: '/fx-movies', pathMatch: 'full' }, 
+  { path: '',   redirectTo: '/fx-movies', pathMatch: 'full' },
 ];
 
 @NgModule({

@@ -36,7 +36,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   ],
   exports: [
     MatFormFieldModule,
-    MatInputModule, 
+    MatInputModule,
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,

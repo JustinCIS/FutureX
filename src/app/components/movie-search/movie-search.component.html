@@ -1,1 +1,4 @@
-<p>fx-movie-search works!</p>
+<mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="emitFilter($event)" #input>
+</mat-form-field>  
