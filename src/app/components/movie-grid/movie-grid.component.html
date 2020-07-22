@@ -2,12 +2,12 @@
 
 <mat-paginator class="altRow" [pageSizeOptions]="[25, 50, 100]"></mat-paginator>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 scrollContainer">
   <table mat-table [dataSource]="dataSource" matSort>
 
-    <ng-container *ngFor="let cols of displayedColumns" [matColumnDef]="cols">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="header"> {{cols}} </th>
-      <td mat-cell *matCellDef="let row"> {{row[cols]}} </td>
+    <ng-container *ngFor="let cols of displayedColumns, index as i" [matColumnDef]="cols" [sticky]="i < 3 ? true : false">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header"> {{cols}} </th>
+        <td mat-cell *matCellDef="let row"> {{row[cols]}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
