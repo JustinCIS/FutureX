@@ -1,0 +1,22 @@
+.altRow { 
+    background-color: #eff6fa 
+}
+
+.header {
+    background-color: #1f54b5;
+    color: #fff;
+}
+
+.scrollContainer {
+    height: 600px;
+    min-width:800px;
+    width: 1000px;
+    overflow: auto;
+}
+
+.mat-header-cell, .mat-footer-cell, .mat-cell {
+    min-width: 100px;
+    box-sizing: border-box;
+    text-align: center;
+  
+  }
